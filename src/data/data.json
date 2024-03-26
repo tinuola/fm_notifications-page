@@ -1,0 +1,53 @@
+{
+  "data": [
+    {
+      "user": "Mark Webber",
+      "statusUnread": true,
+      "img": "/src/assets/images/avatar-mark-webber.webp",
+      "time": "1m",
+      "action": "reaction"
+    },
+    {
+      "user": "Angela Gray",
+      "statusUnread": true,
+      "img": "/src/assets/images/avatar-angela-gray.webp",
+      "time": "5m",
+      "action": "follow"
+    },
+    {
+      "user": "Jacob Thompson",
+      "statusUnread": true,
+      "img": "/src/assets/images/avatar-jacob-thompson.webp",
+      "time": "1 day",
+      "action": "joinGroup"
+    },
+    {
+      "user": "Rizky Hasanuddin",
+      "statusUnread": true,
+      "img": "/src/assets/images/avatar-rizky-hasanuddin.webp",
+      "time": "5 days",
+      "action": "message"
+    },
+    {
+      "user": "Kimberly Smith",
+      "statusUnread": false,
+      "img": "/src/assets/images/avatar-kimberly-smith.webp",
+      "time": "1 week",
+      "action": "comment"
+    },
+    {
+      "user": "Nathan Peterson",
+      "statusUnread": false,
+      "img": "/src/assets/images/avatar-nathan-peterson.webp",
+      "time": "2 weeks",
+      "action": "reaction"
+    },
+    {
+      "user": "Anna Kim",
+      "statusUnread": true,
+      "img": "/src/assets/images/avatar-anna-kim.webp",
+      "time": "2 weeks",
+      "action": "leaveGroup"
+    }
+  ]
+}
