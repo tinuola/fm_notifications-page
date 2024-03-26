@@ -1,39 +1,46 @@
-# fm_notifications-page
+## Frontend Mentor: Notifications Page
 
-This template should help get you started developing with Vue 3 in Vite.
+Solution to the _[Notifications Page](https://www.frontendmentor.io/challenges/notifications-page-DqK5QAmKbC/hub)_ challenge on Frontend Mentor.
 
-## Recommended IDE Setup
+### Challenge
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Build out a notifications page using provided [desktop](/assets/design/desktop-design.jpg) and [mobile](/assets/design/mobile-design.jpg) designs
+- Users should be able to:
+  - Distinguish between "unread" and "read" notifications
+  - Select "Mark all as read" to toggle the visual state of the unread notifications and set the number of unread messages to zero
+  - View the optimal layout for the interface depending on their device's screen size
+  - See [hover and focus states](/assets/design/active-state.jpg) for all interactive elements on the page
 
-## Type Support for `.vue` Imports in TS
+### Enhancement(s)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+-
 
-## Customize configuration
+### Solution
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Live Site: []()
 
-## Project Setup
+### Retrospective
 
-```sh
-npm install
-```
+-
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
+### Installation
 
 ```sh
-npm run build
+# Clone repository
+
+# In the project directory:
+
+npm install # install dependencies
+
+npm run dev # run app development mode
+
+npm run build # compile for production
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### Tools & Resources
 
-```sh
-npm run lint
-```
+- HTML, CSS, JavaScript (Vue)
+- CSS Resets
+- []()
+
+_Visit my [Frontend Mentor profile](https://www.frontendmentor.io/profile/tinuola) to view other challenges I've completed!_
