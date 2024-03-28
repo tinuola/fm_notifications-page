@@ -23,20 +23,6 @@ Live Site: []()
 
 -
 
-### Installation
-
-```sh
-# Clone repository
-
-# In the project directory:
-
-npm install # install dependencies
-
-npm run dev # run app development mode
-
-npm run build # compile for production
-```
-
 ### Tools & Resources
 
 - HTML, CSS, JavaScript (Vue)
