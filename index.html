@@ -86,6 +86,9 @@
                 class="notification"
                 @click="note.statusUnread = !note.statusUnread"
                 :class="{unread : note.statusUnread}"
+                tabindex="0"
+                role="button"
+                :key="note.user"
               >
                 <!-- :class="note.statusUnread ? 'unread' : ''" -->
                 <div class="notification-wrapper">

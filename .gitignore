@@ -3,7 +3,7 @@
 
 # MAC
 .DS_Store
-.vscode/
+.vscode
 Thumbs.db
 .Trashes
 .anima
