@@ -5,7 +5,7 @@
     "img": "assets/images/avatar-mark-webber.webp",
     "time": "1m",
     "actionType": "reaction",
-    "action": "reacted to your recent post <span>My first tournament today</span>"
+    "action": "reacted to your recent post <span>My first tournament today!</span>"
   },
   {
     "user": "Angela Gray",
@@ -29,7 +29,8 @@
     "img": "assets/images/avatar-rizky-hasanuddin.webp",
     "time": "5 days",
     "actionType": "message",
-    "action": "sent you a private message"
+    "action": "sent you a private message",
+    "actionMsg": "Hello, thanks for setting up the Chess Club. I’ve been a member for a few weeks now and I’m already having lots of fun and improving my game."
   },
   {
     "user": "Kimberly Smith",
@@ -37,7 +38,8 @@
     "img": "assets/images/avatar-kimberly-smith.webp",
     "time": "1 week",
     "actionType": "comment",
-    "action": "commented on your picture"
+    "action": "commented on your picture",
+    "actionMsg": "assets/images/image-chess.webp"
   },
   {
     "user": "Nathan Peterson",

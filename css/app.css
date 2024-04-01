@@ -19,6 +19,7 @@ body {
   justify-items: center;
   align-items: center;
   font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;
   background-color: var(--light-gray-blue1);
 }
 
@@ -83,7 +84,6 @@ main {
 
 .notification-status p {
   font-size: 0.875rem;
-  font-weight: 500;
   color: var(--dark-gray-blue);
 }
 
@@ -126,10 +126,15 @@ main {
   cursor: pointer;
 }
 
-.notification-wrapper {
+.notification-wrapper > div:first-of-type {
   display: flex;
   -moz-column-gap: 1rem;
   column-gap: 1rem;
+}
+
+.notification-wrapper.col {
+  display: flex;
+  justify-content: space-between;
 }
 
 .notification-img img {
@@ -140,23 +145,23 @@ main {
 }
 
 .notification-content div,
-.notification-content p {
+.notification-content p,
+.notification .message {
   font-size: 0.875rem;
 }
 
 .notification-content .person {
   color: var(--dark-blue);
   font-weight: 800;
-  margin-right: 0.35rem;
+  margin-right: 0.25rem;
 }
 
 .notification-content .description {
   color: var(--dark-gray-blue);
-  font-weight: 500;
 }
 
 .notification-content .description span {
-  margin-left: 0.25rem;
+  margin-left: 0.125rem;
   font-weight: 800;
 }
 
@@ -168,17 +173,37 @@ main {
 
 .notification-content .time {
   color: var(--gray-blue);
-  font-weight: 500;
 }
 
 .notification.unread .notification-content div::after {
   content: '';
   display: inline-block;
-  margin-left: 0.5rem;
+  margin-left: 0.35rem;
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
   background-color: var(--accent-red);
+}
+
+.notification .message {
+  color: var(--dark-gray-blue);
+  padding: 1rem;
+  margin-top: 0.75rem;
+  border: 1px solid var(--light-gray-blue3);
+  border-radius: 0.25rem;
+}
+
+.notification .message:hover {
+  background-color: var(--light-gray-blue2);
+  border-color: var(--light-gray-blue2);
+  cursor: pointer;
+}
+
+.notification .comment-image {
+  width: 39px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
 }
 
 @media only screen and (min-width: 800px) {
@@ -191,8 +216,22 @@ main {
   }
 
   .notification-content div,
-  .notification-content p {
+  .notification-content p,
+  .notification .message {
     font-size: 1rem;
+  }
+
+  .notification-subcontent {
+    margin-right: 1.25rem;
+  }
+
+  .notification .message {
+    padding: 1.125rem 1.25rem 1.25rem 1.25rem;
+    /* margin-right: 1.25rem; */
+  }
+
+  .notification .comment-image {
+    width: 45px;
   }
 }
 
@@ -206,7 +245,6 @@ main {
 
 .fm-byline {
   font-size: 0.75rem;
-  font-weight: 500;
   letter-spacing: 1px;
   text-align: center;
 }
