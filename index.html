@@ -100,8 +100,14 @@
                     />
                   </div>
                   <div class="notification-content">
-                    <p>{{note.user}}</p>
-                    <p>{{note.time}}</p>
+                    <div>
+                      <span class="person">{{note.user}}</span>
+                      <span
+                        class="description"
+                        v-html="note.action"
+                      ></span>
+                    </div>
+                    <p class="time">{{note.time}}</p>
                   </div>
                 </div>
               </li>
