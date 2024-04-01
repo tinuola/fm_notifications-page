@@ -4,48 +4,55 @@
     "statusUnread": true,
     "img": "assets/images/avatar-mark-webber.webp",
     "time": "1m",
-    "action": "reaction"
+    "actionType": "reaction",
+    "action": "reacted to your recent post <span>My first tournament today</span>"
   },
   {
     "user": "Angela Gray",
     "statusUnread": true,
     "img": "assets/images/avatar-angela-gray.webp",
     "time": "5m",
-    "action": "follow"
+    "actionType": "follow",
+    "action": "followed you"
   },
   {
     "user": "Jacob Thompson",
     "statusUnread": true,
     "img": "assets/images/avatar-jacob-thompson.webp",
     "time": "1 day",
-    "action": "joinGroup"
+    "actionType": "joinGroup",
+    "action": "has joined your group <span>Chess Club</span>"
   },
   {
     "user": "Rizky Hasanuddin",
     "statusUnread": false,
     "img": "assets/images/avatar-rizky-hasanuddin.webp",
     "time": "5 days",
-    "action": "message"
+    "actionType": "message",
+    "action": "sent you a private message"
   },
   {
     "user": "Kimberly Smith",
     "statusUnread": false,
     "img": "assets/images/avatar-kimberly-smith.webp",
     "time": "1 week",
-    "action": "comment"
+    "actionType": "comment",
+    "action": "commented on your picture"
   },
   {
     "user": "Nathan Peterson",
     "statusUnread": false,
     "img": "assets/images/avatar-nathan-peterson.webp",
     "time": "2 weeks",
-    "action": "reaction"
+    "actionType": "reaction",
+    "action": "reacted to your recent post <span>5 end-game strategies to increase your win rate</span>"
   },
   {
     "user": "Anna Kim",
     "statusUnread": false,
     "img": "assets/images/avatar-anna-kim.webp",
     "time": "2 weeks",
-    "action": "leaveGroup"
+    "actionType": "leaveGroup",
+    "action": "left the group <span>Chess Club</span>"
   }
 ]
