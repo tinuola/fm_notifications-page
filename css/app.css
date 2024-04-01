@@ -16,23 +16,36 @@
 
 body {
   display: grid;
-  grid-template-rows: auto 1fr auto;
-  /* grid-template-rows: 1fr auto; */
   justify-items: center;
   align-items: center;
   font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--light-gray-blue1);
 }
 
 .container {
-  min-width: 343px;
+  min-width: 375px;
   width: 100%;
-  padding: 1.5rem 1rem 1.75rem 1rem;
-  background-color: wheat;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  justify-items: center;
+  align-items: center;
 }
 
 @media only screen and (min-width: 800px) {
   .container {
     width: 730px;
+  }
+}
+
+main {
+  background-color: var(--white);
+  padding: 1.5rem 1rem 1.75rem 1rem;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+@media only screen and (min-width: 800px) {
+  main {
     padding: 2rem;
   }
 }
@@ -44,11 +57,34 @@ body {
 .notifications-status-section {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
 }
 
 .notification-count {
   display: flex;
+  align-items: center;
   gap: 0.5rem;
+}
+
+.notification-count h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--dark-blue);
+}
+
+.notification-count span {
+  background-color: var(--accent-blue);
+  color: var(--white);
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
+}
+
+.notification-status p {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--dark-gray-blue);
 }
 
 /***********************/
@@ -63,15 +99,17 @@ body {
   display: flex;
   flex-direction: column;
   row-gap: 1.5rem;
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 
 .notification {
   display: inline-block;
+  padding: 1rem 0 1rem 1rem;
 }
 
 .notification.unread {
-  background-color: var(--light-gray-blue2);
+  background-color: var(--light-gray-blue1);
+  border-radius: 0.5rem;
 }
 
 .notification-wrapper {
@@ -80,16 +118,46 @@ body {
   column-gap: 1rem;
 }
 
+.notification-content p {
+  font-size: 0.875rem;
+}
+
+.notification-content p:first-of-type {
+  color: var(--dark-blue);
+  font-weight: 800;
+}
+
+.notification-content p:last-of-type {
+  color: var(--gray-blue);
+  font-weight: 500;
+}
+
+.notification.unread .notification-content p:first-of-type::after {
+  content: '';
+  display: inline-block;
+  margin-left: 0.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--accent-red);
+}
+
 /***********/
 /* Footer */
 /***********/
 
+.fm-byline-row {
+  padding-bottom: 2rem;
+}
+
 .fm-byline {
   font-size: 0.75rem;
+  font-weight: 500;
   letter-spacing: 1px;
   text-align: center;
 }
 
 .fm-byline,
 .fm-byline a {
+  color: var(--dark-blue);
 }
