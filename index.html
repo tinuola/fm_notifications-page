@@ -91,17 +91,43 @@
                 :key="note.user"
               >
                 <!-- :class="note.statusUnread ? 'unread' : ''" -->
-                <div class="notification-wrapper">
-                  <div class="notification-img">
-                    <img
-                      :src="note.img"
-                      :alt="note.user"
-                      :width="50"
-                    />
+                <div
+                  class="notification-wrapper"
+                  :class="note.actionType === 'comment' ? 'col' : ''"
+                >
+                  <div>
+                    <div class="notification-img">
+                      <img
+                        :src="note.img"
+                        :alt="note.user"
+                        :width="50"
+                      />
+                    </div>
+                    <div class="notification-content">
+                      <div>
+                        <span class="person">{{note.user}}</span>
+                        <span
+                          class="description"
+                          v-html="note.action"
+                        ></span>
+                      </div>
+                      <p class="time">{{note.time}} ago</p>
+                    </div>
                   </div>
-                  <div class="notification-content">
-                    <p>{{note.user}}</p>
-                    <p>{{note.time}}</p>
+                  <div
+                    class="notification-subcontent"
+                    v-if="note.actionType === 'message'"
+                  >
+                    <p class="message">{{note.actionMsg}}</p>
+                  </div>
+                  <div
+                    class="notification-subcontent"
+                    v-if="note.actionType === 'comment'"
+                  >
+                    <img
+                      class="comment-image"
+                      :src="note.actionMsg"
+                    />
                   </div>
                 </div>
               </li>
