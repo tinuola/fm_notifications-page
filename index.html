@@ -77,21 +77,25 @@
               <h2>Notifications</h2>
               <span>{{statusCount}}</span>
             </div>
-            <div class="notification-status">
-              <button @click="markAllAsRead()">Mark all as read</button>
+            <div
+              class="notification-status"
+              v-if="statusCount > 0"
+            >
+              <button @click="markAllMsgsAsRead()">Mark all as read</button>
             </div>
           </section>
           <section class="notifications-section">
             <ul>
               <li
-                v-for="note in notifications"
+                v-for="note,index in notifications"
                 class="notification"
-                @click="note.statusUnread = false"
+                @click="markMsgAsRead(index)"
                 :class="{unread : note.statusUnread}"
                 tabindex="0"
                 role="button"
                 :key="note.user"
               >
+                <!-- @click="note.statusUnread = false" -->
                 <!-- @click="note.statusUnread = !note.statusUnread" -->
                 <!-- :class="note.statusUnread ? 'unread' : ''" -->
                 <div

@@ -4,18 +4,33 @@ const NotificationsPage = {
   data() {
     return {
       notifications: data,
-      statusCount: 3
+      statusCount: 0
     }
   },
 
   methods: {
-    markAllAsRead() {
+    markAllMsgsAsRead() {
       this.notifications.forEach(note => {
         note.statusUnread === true ? note.statusUnread = false : ''
       })
       this.statusCount = 0
     },
+    markMsgAsRead(index) {
+      const status = this.notifications[index].statusUnread
 
+      if (status) {
+        this.notifications[index].statusUnread = false
+        this.statusCount--
+      }
+    },
+    countStatus() {
+      const count = this.notifications.filter(obj => obj.statusUnread === true)
+      return count.length
+    }
+  },
+
+  mounted() {
+    this.statusCount = this.countStatus()    
   }
 }
 
