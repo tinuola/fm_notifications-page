@@ -114,7 +114,7 @@ main {
 /* Notifications Section */
 /***********************/
 
-.notifications-list-section ul,
+.notifications-list,
 .notification-wrapper > div:first-of-type,
 .notification-wrapper.column {
   display: flex;
@@ -124,7 +124,7 @@ main {
   background-color: white;
 }
 
-.notifications-list-section ul {
+.notifications-list {
   flex-direction: column;
   row-gap: 0.5rem;
 }
