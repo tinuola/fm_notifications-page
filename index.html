@@ -17,7 +17,7 @@
     />
     <meta
       name="description"
-      content="Solution to the Notifications challenge on Frontend Mentor."
+      content="Solution to the Notifications Page challenge on Frontend Mentor."
     />
     <meta
       name="theme-color"
@@ -60,7 +60,7 @@
   </head>
   <body>
     <div id="app">
-      <div class="container">
+      <div class="site-container">
         <header>
           <a
             href="#main"
@@ -84,26 +84,23 @@
               <button @click="markAllMsgsAsRead()">Mark all as read</button>
             </div>
           </section>
-          <section class="notifications-section">
+          <section class="notifications-list-section">
             <ul>
               <li
                 v-for="note,index in notifications"
-                class="notification"
+                class="notification-item"
                 @click="markMsgAsRead(index)"
                 :class="{unread : note.statusUnread}"
                 tabindex="0"
                 role="button"
                 :key="note.user"
               >
-                <!-- @click="note.statusUnread = false" -->
-                <!-- @click="note.statusUnread = !note.statusUnread" -->
-                <!-- :class="note.statusUnread ? 'unread' : ''" -->
                 <div
                   class="notification-wrapper"
-                  :class="note.actionType === 'comment' ? 'col' : ''"
+                  :class="note.actionType === 'comment' ? 'column' : ''"
                 >
-                  <div>
-                    <div class="notification-img">
+                  <div class="notification-body">
+                    <div class="notification-user-img">
                       <img
                         :src="note.img"
                         :alt="note.user"
@@ -112,7 +109,7 @@
                     </div>
                     <div class="notification-content">
                       <div>
-                        <span class="person">{{note.user}}</span>
+                        <span class="username">{{note.user}}</span>
                         <span
                           class="description"
                           v-html="note.action"
@@ -122,19 +119,16 @@
                     </div>
                   </div>
                   <div
-                    class="notification-subcontent"
+                    class="notification-nested-content"
                     v-if="note.actionType === 'message'"
                   >
-                    <p class="message">{{note.actionMsg}}</p>
+                    <p>{{note.actionMsg}}</p>
                   </div>
                   <div
-                    class="notification-subcontent"
+                    class="notification-nested-content"
                     v-if="note.actionType === 'comment'"
                   >
-                    <img
-                      class="comment-image"
-                      :src="note.actionMsg"
-                    />
+                    <img :src="note.actionMsg" />
                   </div>
                 </div>
               </li>
