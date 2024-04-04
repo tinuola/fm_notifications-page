@@ -75,11 +75,11 @@
           <section class="notifications-status-section">
             <div class="notification-count">
               <h2>Notifications</h2>
-              <span>{{statusCount}}</span>
+              <span>{{unreadCount}}</span>
             </div>
             <div
               class="notification-status"
-              v-if="statusCount > 0"
+              v-if="unreadCount > 0"
             >
               <button @click="markAllMsgsAsRead()">Mark all as read</button>
             </div>
@@ -87,48 +87,48 @@
           <section class="notifications-list-section">
             <ul>
               <li
-                v-for="note,index in notifications"
+                v-for="msg,index in notifications"
                 class="notification-item"
                 @click="markMsgAsRead(index)"
-                :class="{unread : note.statusUnread}"
+                :class="{unread : msg.statusUnread}"
                 tabindex="0"
                 role="button"
-                :key="note.user"
+                :key="msg.user"
               >
                 <div
                   class="notification-wrapper"
-                  :class="note.actionType === 'comment' ? 'column' : ''"
+                  :class="msg.actionType === 'comment' ? 'column' : ''"
                 >
                   <div class="notification-body">
                     <div class="notification-user-img">
                       <img
-                        :src="note.img"
-                        :alt="note.user"
+                        :src="msg.img"
+                        :alt="msg.user"
                         :width="50"
                       />
                     </div>
                     <div class="notification-content">
                       <div>
-                        <span class="username">{{note.user}}</span>
+                        <span class="username">{{msg.user}}</span>
                         <span
                           class="description"
-                          v-html="note.action"
+                          v-html="msg.action"
                         ></span>
                       </div>
-                      <p class="time">{{note.time}} ago</p>
+                      <p class="time">{{msg.time}} ago</p>
                     </div>
                   </div>
                   <div
                     class="notification-nested-content"
-                    v-if="note.actionType === 'message'"
+                    v-if="msg.actionType === 'message'"
                   >
-                    <p>{{note.actionMsg}}</p>
+                    <p>{{msg.actionMsg}}</p>
                   </div>
                   <div
                     class="notification-nested-content"
-                    v-if="note.actionType === 'comment'"
+                    v-if="msg.actionType === 'comment'"
                   >
-                    <img :src="note.actionMsg" />
+                    <img :src="msg.actionMsg" />
                   </div>
                 </div>
               </li>
