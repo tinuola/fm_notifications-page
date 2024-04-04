@@ -85,14 +85,17 @@
             </div>
           </section>
           <section class="notifications-list-section">
-            <ul>
-              <li
+            <div
+              class="notifications-list"
+              role="list"
+            >
+              <div
                 v-for="msg,index in notifications"
                 class="notification-item"
                 @click="markMsgAsRead(index)"
                 :class="{unread : msg.statusUnread}"
                 tabindex="0"
-                role="button"
+                role="listitem"
                 :key="msg.user"
               >
                 <div
@@ -103,8 +106,9 @@
                     <div class="notification-user-img">
                       <img
                         :src="msg.img"
-                        :alt="msg.user"
-                        :width="50"
+                        :alt="'User ' + msg.user"
+                        width="50px"
+                        height="50px"
                       />
                     </div>
                     <div class="notification-content">
@@ -128,11 +132,14 @@
                     class="notification-nested-content"
                     v-if="msg.actionType === 'comment'"
                   >
-                    <img :src="msg.actionMsg" />
+                    <img
+                      :src="msg.actionMsg"
+                      alt="Female chess player"
+                    />
                   </div>
                 </div>
-              </li>
-            </ul>
+              </div>
+            </div>
           </section>
         </main>
         <footer class="fm-byline-row">

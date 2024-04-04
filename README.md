@@ -11,22 +11,17 @@ Solution to the _[Notifications Page](https://www.frontendmentor.io/challenges/n
   - View the optimal layout for the interface depending on their device's screen size
   - See [hover and focus states](/assets/design/active-state.jpg) for all interactive elements on the page
 
-### Enhancement(s)
-
--
-
 ### Solution
 
-Live Site: []()
+Live Site: [tinuola.github.io/fm_notifications-page/](https://tinuola.github.io/fm_notifications-page/)
 
 ### Retrospective
 
--
+- A project for basic VueJS practice
 
 ### Tools & Resources
 
 - HTML, CSS, JavaScript (Vue)
 - CSS Resets
-- []()
 
 _Visit my [Frontend Mentor profile](https://www.frontendmentor.io/profile/tinuola) to view other challenges I've completed!_

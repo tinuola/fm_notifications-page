@@ -20,3 +20,7 @@
 
 - Add logic to handle notification count update dynamically
 - Remove "mark all as read" element when count is zero
+
+**Part-05**
+
+- Refactoring markup and CSS; minor cleanup of JavaScript
