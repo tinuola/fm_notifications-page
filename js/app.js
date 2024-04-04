@@ -1,17 +1,17 @@
-import data from '../data/data.json' with { type: 'json' }
+import data from '../data/data.js'
 
 const NotificationsPage = {
   data() {
     return {
       notifications: data,
-      unreadCount: 0
+      unreadCount: 0,
     }
   },
 
   methods: {
     markAllMsgsAsRead() {
-      this.notifications.forEach(msg => {
-        msg.statusUnread === true ? msg.statusUnread = false : ''
+      this.notifications.forEach((msg) => {
+        msg.statusUnread === true ? (msg.statusUnread = false) : ''
       })
       this.unreadCount = 0
     },
@@ -24,14 +24,16 @@ const NotificationsPage = {
       }
     },
     countUnreadStatus() {
-      const count = this.notifications.filter(obj => obj.statusUnread === true)
+      const count = this.notifications.filter(
+        (obj) => obj.statusUnread === true
+      )
       return count.length
-    }
+    },
   },
 
   mounted() {
-    this.unreadCount = this.countUnreadStatus()    
-  }
+    this.unreadCount = this.countUnreadStatus()
+  },
 }
 
 Vue.createApp(NotificationsPage).mount('#app')
