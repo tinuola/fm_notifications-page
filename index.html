@@ -103,7 +103,7 @@
               >
                 <div
                   class="notification-wrapper"
-                  :class="msg.msgType === 'comment' && msg.msgData.targetType === 'media' ? 'column' : ''"
+                  :class="{column: msg.msgType === 'comment' && msg.msgData.contextType === 'media'}"
                 >
                   <div class="notification-body">
                     <div class="notification-user-img">
@@ -120,8 +120,8 @@
                         <span class="description"
                           >{{msg.msgData.action}}
                           <span
-                            v-if="msg.msgType !== 'message' && (msg.msgType !== 'comment' || msg.msgData.targetType !== 'media')"
-                            >{{msg.msgData.target}}</span
+                            v-if="msg.msgType !== 'message' && (msg.msgType !== 'comment' || msg.msgData.contextType !== 'media')"
+                            >{{msg.msgData.context}}</span
                           >
                         </span>
                       </div>
@@ -132,14 +132,14 @@
                     class="notification-nested-content"
                     v-if="msg.msgType === 'message'"
                   >
-                    <p>{{msg.msgData.target}}</p>
+                    <p>{{msg.msgData.context}}</p>
                   </div>
                   <div
                     class="notification-nested-content"
-                    v-if="msg.msgType === 'comment' && msg.msgData.targetType === 'media'"
+                    v-if="msg.msgType === 'comment' && msg.msgData.contextType === 'media'"
                   >
                     <img
-                      :src="msg.msgData.target"
+                      :src="msg.msgData.context"
                       alt="Female chess player"
                     />
                   </div>
