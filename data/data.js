@@ -6,7 +6,7 @@ const data = [
     msgType: 'reaction',
     msgData: {
       user: 'Mark Webber',
-      img: 'assets/images/avatar-mark-webber.webp',
+      userImg: 'assets/images/avatar-mark-webber.webp',
       action: 'reacted to your recent post',
       targetType: 'post',
       target: 'My first tournament today!',
@@ -19,7 +19,7 @@ const data = [
     msgType: 'follow',
     msgData: {
       user: 'Angela Gray',
-      img: 'assets/images/avatar-angela-gray.webp',
+      userImg: 'assets/images/avatar-angela-gray.webp',
       action: 'followed you',
       target: null,
     },
@@ -31,7 +31,7 @@ const data = [
     msgType: 'joinGroup',
     msgData: {
       user: 'Jacob Thompson',
-      img: 'assets/images/avatar-jacob-thompson.webp',
+      userImg: 'assets/images/avatar-jacob-thompson.webp',
       action: 'has joined your group',
       target: 'Chess Club',
     },
@@ -43,7 +43,7 @@ const data = [
     msgType: 'message',
     msgData: {
       user: 'Rizky Hasanuddin',
-      img: 'assets/images/avatar-rizky-hasanuddin.webp',
+      userImg: 'assets/images/avatar-rizky-hasanuddin.webp',
       action: 'sent you a private message',
       target:
         'Hello, thanks for setting up the Chess Club. I’ve been a member for a few weeks now and I’m already having lots of fun and improving my game.',
@@ -56,7 +56,7 @@ const data = [
     msgType: 'comment',
     msgData: {
       user: 'Kimberly Smith',
-      img: 'assets/images/avatar-kimberly-smith.webp',
+      userImg: 'assets/images/avatar-kimberly-smith.webp',
       action: 'commented on your picture',
       targetType: 'media',
       target: 'assets/images/image-chess.webp',
@@ -69,7 +69,7 @@ const data = [
     msgType: 'reaction',
     msgData: {
       user: 'Nathan Peterson',
-      img: 'assets/images/avatar-nathan-peterson.webp',
+      userImg: 'assets/images/avatar-nathan-peterson.webp',
       action: 'reacted to your recent post',
       targetType: 'post',
       target: '5 end-game strategies to increase your win rate',
@@ -82,11 +82,25 @@ const data = [
     msgType: 'leaveGroup',
     msgData: {
       user: 'Anna Kim',
-      img: 'assets/images/avatar-anna-kim.webp',
+      userImg: 'assets/images/avatar-anna-kim.webp',
       action: 'left the group',
       target: 'Chess Club',
     },
   },
+  // Extra data for testing
+  // {
+  //   msgId: '8',
+  //   time: '2 weeks',
+  //   statusUnread: false,
+  //   msgType: 'comment',
+  //   msgData: {
+  //     user: 'Kimberly Smith',
+  //     userImg: 'assets/images/avatar-kimberly-smith.webp',
+  //     action: 'commented on your post',
+  //     targetType: null,
+  //     target: 'Going on Vacation!',
+  //   },
+  // },
 ]
 
 export default data
