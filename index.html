@@ -17,7 +17,7 @@
     />
     <meta
       name="description"
-      content="Solution to the Notifications challenge on Frontend Mentor."
+      content="Solution to the Notifications Page challenge on Frontend Mentor."
     />
     <meta
       name="theme-color"
@@ -60,7 +60,7 @@
   </head>
   <body>
     <div id="app">
-      <div class="container">
+      <div class="site-container">
         <header>
           <a
             href="#main"
@@ -75,66 +75,71 @@
           <section class="notifications-status-section">
             <div class="notification-count">
               <h2>Notifications</h2>
-              <span>{{statusCount}}</span>
+              <span>{{unreadCount}}</span>
             </div>
-            <div class="notification-status">
-              <button @click="markAllAsRead()">Mark all as read</button>
+            <div
+              class="notification-status"
+              v-if="unreadCount > 0"
+            >
+              <button @click="markAllMsgsAsRead()">Mark all as read</button>
             </div>
           </section>
-          <section class="notifications-section">
-            <ul>
-              <li
-                v-for="note in notifications"
-                class="notification"
-                @click="note.statusUnread = false"
-                :class="{unread : note.statusUnread}"
+          <section class="notifications-list-section">
+            <div
+              class="notifications-list"
+              role="list"
+            >
+              <div
+                v-for="msg,index in notifications"
+                class="notification-item"
+                @click="markMsgAsRead(index)"
+                :class="{unread : msg.statusUnread}"
                 tabindex="0"
-                role="button"
-                :key="note.user"
+                role="listitem"
+                :key="msg.user"
               >
-                <!-- @click="note.statusUnread = !note.statusUnread" -->
-                <!-- :class="note.statusUnread ? 'unread' : ''" -->
                 <div
                   class="notification-wrapper"
-                  :class="note.actionType === 'comment' ? 'col' : ''"
+                  :class="msg.actionType === 'comment' ? 'column' : ''"
                 >
-                  <div>
-                    <div class="notification-img">
+                  <div class="notification-body">
+                    <div class="notification-user-img">
                       <img
-                        :src="note.img"
-                        :alt="note.user"
-                        :width="50"
+                        :src="msg.img"
+                        :alt="'User ' + msg.user"
+                        width="50px"
+                        height="50px"
                       />
                     </div>
                     <div class="notification-content">
                       <div>
-                        <span class="person">{{note.user}}</span>
+                        <span class="username">{{msg.user}}</span>
                         <span
                           class="description"
-                          v-html="note.action"
+                          v-html="msg.action"
                         ></span>
                       </div>
-                      <p class="time">{{note.time}} ago</p>
+                      <p class="time">{{msg.time}} ago</p>
                     </div>
                   </div>
                   <div
-                    class="notification-subcontent"
-                    v-if="note.actionType === 'message'"
+                    class="notification-nested-content"
+                    v-if="msg.actionType === 'message'"
                   >
-                    <p class="message">{{note.actionMsg}}</p>
+                    <p>{{msg.actionMsg}}</p>
                   </div>
                   <div
-                    class="notification-subcontent"
-                    v-if="note.actionType === 'comment'"
+                    class="notification-nested-content"
+                    v-if="msg.actionType === 'comment'"
                   >
                     <img
-                      class="comment-image"
-                      :src="note.actionMsg"
+                      :src="msg.actionMsg"
+                      alt="Female chess player"
                     />
                   </div>
                 </div>
-              </li>
-            </ul>
+              </div>
+            </div>
           </section>
         </main>
         <footer class="fm-byline-row">

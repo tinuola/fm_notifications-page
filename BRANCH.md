@@ -15,3 +15,12 @@
 - Logic for display of private message and commented picture
 - Logic for changing status of all unread notifications and hard-coded update of notification count
 - Refactor markup and CSS
+
+**Part-04**
+
+- Add logic to handle notification count update dynamically
+- Remove "mark all as read" element when count is zero
+
+**Part-05**
+
+- Refactoring markup and CSS; minor cleanup of JavaScript
