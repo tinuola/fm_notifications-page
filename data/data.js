@@ -9,7 +9,8 @@ const data = [
       userImg: 'assets/images/avatar-mark-webber.webp',
       action: 'reacted to your recent post',
       context: 'My first tournament today!',
-      contextType: 'post',
+      contextType: null,
+      contextData: null,
     },
   },
   {
@@ -22,6 +23,8 @@ const data = [
       userImg: 'assets/images/avatar-angela-gray.webp',
       action: 'followed you',
       context: null,
+      contextType: null,
+      contextData: null,
     },
   },
   {
@@ -35,6 +38,7 @@ const data = [
       action: 'has joined your group',
       context: 'Chess Club',
       contextType: null,
+      contextData: null,
     },
   },
   {
@@ -46,9 +50,10 @@ const data = [
       user: 'Rizky Hasanuddin',
       userImg: 'assets/images/avatar-rizky-hasanuddin.webp',
       action: 'sent you a private message',
-      context:
-        'Hello, thanks for setting up the Chess Club. I’ve been a member for a few weeks now and I’m already having lots of fun and improving my game.',
+      context: null,
       contextType: null,
+      contextData:
+        'Hello, thanks for setting up the Chess Club. I’ve been a member for a few weeks now and I’m already having lots of fun and improving my game.',
     },
   },
   {
@@ -60,8 +65,9 @@ const data = [
       user: 'Kimberly Smith',
       userImg: 'assets/images/avatar-kimberly-smith.webp',
       action: 'commented on your picture',
-      context: 'assets/images/image-chess.webp',
+      context: null,
       contextType: 'media',
+      contextData: 'assets/images/image-chess.webp',
     },
   },
   {
@@ -74,7 +80,8 @@ const data = [
       userImg: 'assets/images/avatar-nathan-peterson.webp',
       action: 'reacted to your recent post',
       context: '5 end-game strategies to increase your win rate',
-      contextType: 'post',
+      contextType: null,
+      contextData: null,
     },
   },
   {
@@ -88,22 +95,52 @@ const data = [
       action: 'left the group',
       context: 'Chess Club',
       contextType: null,
+      contextData: null,
     },
   },
   // Extra data for testing
-  {
-    msgId: '8',
-    time: '2 weeks',
-    statusUnread: false,
-    msgType: 'comment',
-    msgData: {
-      user: 'Kimberly Smith',
-      userImg: 'assets/images/avatar-kimberly-smith.webp',
-      action: 'commented on your post',
-      context: 'Going on Vacation!',
-      contextType: 'post',
-    },
-  },
+  // {
+  //   msgId: '8',
+  //   time: '2 weeks',
+  //   statusUnread: false,
+  //   msgType: 'comment',
+  //   msgData: {
+  //     user: 'Kimberly Smith',
+  //     userImg: 'assets/images/avatar-kimberly-smith.webp',
+  //     action: 'commented on your post',
+  //     context: 'Going on Vacation!',
+  //     contextType: null,
+  //     contextData: null,
+  //   },
+  // },
+  // {
+  //   msgId: '9',
+  //   time: '3 weeks',
+  //   statusUnread: false,
+  //   msgType: 'reaction',
+  //   msgData: {
+  //     user: 'Nathan Peterson',
+  //     userImg: 'assets/images/avatar-nathan-peterson.webp',
+  //     action: 'reacted to your picture',
+  //     context: null,
+  //     contextType: 'media',
+  //     contextData: 'assets/images/image-chess.webp',
+  //   },
+  // },
+  // {
+  //   msgId: '10',
+  //   time: '4 weeks',
+  //   statusUnread: false,
+  //   msgType: 'message',
+  //   msgData: {
+  //     user: 'Anna Kim',
+  //     userImg: 'assets/images/avatar-anna-kim.webp',
+  //     action: 'posted a message to the group',
+  //     context: 'Chess Club',
+  //     contextType: null,
+  //     contextData: 'Anyone going to the tournament in Vegas next week?',
+  //   },
+  // },
 ]
 
 export default data

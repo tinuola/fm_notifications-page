@@ -101,9 +101,12 @@
                 role="listitem"
                 :key="msg.msgId"
               >
+                <!-- If message involves an image, use column layout in wrapper -->
                 <div
                   class="notification-wrapper"
-                  :class="{column: msg.msgType === 'comment' && msg.msgData.contextType === 'media'}"
+                  :class="{column: 
+                    (msg.msgType === 'comment' || msg.msgType === 'reaction') && 
+                    msg.msgData.contextType === 'media'}"
                 >
                   <div class="notification-body">
                     <div class="notification-user-img">
@@ -119,8 +122,11 @@
                         <span class="username">{{msg.msgData.user}}</span>
                         <span class="description"
                           >{{msg.msgData.action}}
+
+                          <!-- Display notification subject: post, group -->
                           <span
-                            v-if="msg.msgType !== 'message' && (msg.msgType !== 'comment' || msg.msgData.contextType !== 'media')"
+                            v-if="msg.msgType !== 'message' || !( (msg.msgType === 'comment' || msg.msgType === 'reaction') && 
+                    msg.msgData.contextType === 'media')"
                             >{{msg.msgData.context}}</span
                           >
                         </span>
@@ -128,18 +134,21 @@
                       <p class="time">{{msg.time}} ago</p>
                     </div>
                   </div>
+                  <!-- If a notification is a message -->
                   <div
                     class="notification-nested-content"
                     v-if="msg.msgType === 'message'"
                   >
-                    <p>{{msg.msgData.context}}</p>
+                    <p>{{msg.msgData.contextData}}</p>
                   </div>
+
+                  <!-- If a notification is in response to media -->
                   <div
                     class="notification-nested-content"
-                    v-if="msg.msgType === 'comment' && msg.msgData.contextType === 'media'"
+                    v-if="(msg.msgType === 'comment' || msg.msgType === 'reaction') && msg.msgData.contextType === 'media'"
                   >
                     <img
-                      :src="msg.msgData.context"
+                      :src="msg.msgData.contextData"
                       alt="Female chess player"
                     />
                   </div>
