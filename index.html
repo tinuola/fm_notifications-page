@@ -72,6 +72,7 @@
           </h1>
         </header>
         <main id="main">
+          <!-- Notification Count + Read All -->
           <section class="notifications-status-section">
             <div class="notification-count">
               <h2>Notifications</h2>
@@ -84,6 +85,8 @@
               <button @click="markAllMsgsAsRead()">Mark all as read</button>
             </div>
           </section>
+
+          <!-- Notifications List -->
           <section class="notifications-list-section">
             <div
               class="notifications-list"
@@ -96,44 +99,56 @@
                 :class="{unread : msg.statusUnread}"
                 tabindex="0"
                 role="listitem"
-                :key="msg.user"
+                :key="msg.msgId"
               >
+                <!-- If message involves an image, use column layout in wrapper -->
                 <div
                   class="notification-wrapper"
-                  :class="msg.actionType === 'comment' ? 'column' : ''"
+                  :class="{column: 
+                    (msg.msgType === 'comment' || msg.msgType === 'reaction') && 
+                    msg.msgData.contextType === 'media'}"
                 >
                   <div class="notification-body">
                     <div class="notification-user-img">
                       <img
-                        :src="msg.img"
-                        :alt="'User ' + msg.user"
+                        :src="msg.msgData.userImg"
+                        :alt="'User ' + msg.msgData.user"
                         width="50px"
                         height="50px"
                       />
                     </div>
                     <div class="notification-content">
                       <div>
-                        <span class="username">{{msg.user}}</span>
-                        <span
-                          class="description"
-                          v-html="msg.action"
-                        ></span>
+                        <span class="username">{{msg.msgData.user}}</span>
+                        <span class="description"
+                          >{{msg.msgData.action}}
+
+                          <!-- Display notification subject: post, group -->
+                          <span
+                            v-if="msg.msgType !== 'message' || !( (msg.msgType === 'comment' || msg.msgType === 'reaction') && 
+                    msg.msgData.contextType === 'media')"
+                            >{{msg.msgData.context}}</span
+                          >
+                        </span>
                       </div>
                       <p class="time">{{msg.time}} ago</p>
                     </div>
                   </div>
+                  <!-- If a notification is a message -->
                   <div
                     class="notification-nested-content"
-                    v-if="msg.actionType === 'message'"
+                    v-if="msg.msgType === 'message'"
                   >
-                    <p>{{msg.actionMsg}}</p>
+                    <p>{{msg.msgData.contextData}}</p>
                   </div>
+
+                  <!-- If a notification is in response to media -->
                   <div
                     class="notification-nested-content"
-                    v-if="msg.actionType === 'comment'"
+                    v-if="(msg.msgType === 'comment' || msg.msgType === 'reaction') && msg.msgData.contextType === 'media'"
                   >
                     <img
-                      :src="msg.actionMsg"
+                      :src="msg.msgData.contextData"
                       alt="Female chess player"
                     />
                   </div>

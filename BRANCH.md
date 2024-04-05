@@ -24,3 +24,8 @@
 **Part-05**
 
 - Refactoring markup and CSS; minor cleanup of JavaScript
+
+**Part-06**
+
+- Refactor data structure and markup logic
+- Added more data for testing alternate notifications scenarios
